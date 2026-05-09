@@ -27,13 +27,14 @@ bash
 git clone https://github.com/Herus1111/Podcast-Site-WEB.git
 
 ## How to run
-
+```
 npm install
 
 node app.js
+```
 
 or
-
+```
 node server.js
-
+```
 (depending on the main file)
