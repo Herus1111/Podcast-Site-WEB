@@ -30,10 +30,10 @@ node server.js
 ## Screenshots
 
 ### Main page
-<img src="https://github.com/user-attachments/assets/60f91171-33c8-43ce-a6b8-8b54ded4dfce" width="600" />
+<img src="https://github.com/user-attachments/assets/60f91171-33c8-43ce-a6b8-8b54ded4dfce" width="1020" />
 
 ### Podcast info
-<img src="https://github.com/user-attachments/assets/d04e5b02-3626-462c-b879-864439548610" width="600" />
+<img src="https://github.com/user-attachments/assets/d04e5b02-3626-462c-b879-864439548610" width="1020" />
 
 ### Episode info
-<img src="https://github.com/user-attachments/assets/bd0f6025-b77d-4a16-af83-38c99e4cca81" width="600" />
+<img src="https://github.com/user-attachments/assets/bd0f6025-b77d-4a16-af83-38c99e4cca81" width="1020" />
