@@ -12,7 +12,7 @@ Simple web app for podcasts. You can add, view and listen to podcasts.
 ## Setup
 
 Clone the repo:
-```bash
+bash
 git clone https://github.com/Herus1111/Podcast-Site-WEB.git
 
 ## How to run
