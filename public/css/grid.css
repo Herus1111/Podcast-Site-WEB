@@ -1,0 +1,86 @@
+body {
+    display: grid;
+    grid-template-columns: 70% 30%;
+
+    grid-template-areas: "kopfbereich kopfbereich"
+        "navBereich navBereich"
+        "hauptinhalt zusatzInfo"
+        "fussbereich fussbereich";
+}
+
+
+#podcastMainContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "info bild"
+        "episoden episoden";
+    gap: 10px;
+}
+
+@media screen and (max-width: 480px) {
+    .podcast {
+        grid-template-columns: 100%;
+        grid-template-areas:
+            "kopfbereich"
+            "navBereich"
+            "hauptinhalt"
+            "zusatzInfo"
+            "bottom"
+    }
+
+    #podcastMainContainer {
+        grid-template-columns: 100%;
+        grid-template-areas: "info"
+            "episoden"
+            "bild";
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .podcast,
+    .newPodcast {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-areas: "kopfbereich"
+            "navBereich"
+            "hauptinhalt"
+            "zusatzInfo"
+            "fussbereich";
+    }
+}
+
+#info {
+    grid-area: info;
+}
+
+#bild {
+    grid-area: bild;
+    text-align: center;
+}
+
+#episoden {
+    justify-self: center;
+    align-self: center;
+    grid-area: episoden;
+}
+
+header {
+    grid-area: kopfbereich;
+}
+
+nav {
+    grid-area: navBereich;
+}
+
+main {
+    grid-area: hauptinhalt;
+}
+
+aside {
+    grid-area: zusatzInfo;
+}
+
+footer {
+    grid-area: fussbereich;
+}

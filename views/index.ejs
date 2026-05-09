@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <title>Liste der abonnierten Podcasts</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/flex.css">
+</head>
+
+<body>
+    <%- include("partials/header.ejs") %>
+
+        <div id="maincontainer">
+            <main id="index">
+                <section id="suche">
+                    <h2>Podcast finden</h2>
+                    <form action="https://edu.inf.fh-dortmund.de/podcastService/testPodcastSearch.php" method="get">
+                        <label>
+                            Titel:
+                            <input type="search" name="pctitle" maxlength="100" pattern="[A-Z].*" required>
+                        </label>
+                        <input type="submit" value="Finden">
+                    </form>
+                </section>
+
+                <section id="liste">
+                    <h2>Abonnierte Podcasts</h2>
+                    <!-- Praktikum 9 -->
+                    <button id="toggleViewBtn">Listenansicht</button>
+                    <!-- Praktikum 12 -->
+                    <% if(podcasts){ %>
+                        <ul id="podcastList">
+                            <% for(let i=0; i < podcasts.length; i++){ %>
+                                <li> <a href="/podcast?pc=<%= i %>"> <img src="<%= podcasts[i].bildUrl %>" width="220"
+                                            height="220" alt="logo">
+                                        <%= podcasts[i].titel %>
+                                    </a> - <%= podcasts[i].episoden.length %> Ep. </li>
+                                <% } %>
+                        </ul>
+                        <% } %>
+                </section>
+
+                <form action="http://localhost:8020/subscribe" method="post" id="abboForm">
+                    <fieldset>
+                        <legend>Podcast abonnieren</legend>
+                        <label>
+                            URL: <input required type="url" name="urlPodc">
+                        </label>
+                        <input type="submit" value="Abonnieren">
+                    </fieldset>
+                </form>
+
+            </main>
+
+            <%- include("partials/aside.ejs") %>
+        </div>
+
+        <%- include("partials/footer.ejs") %>
+
+            <script src="js/script.js"></script>
+            <script src="js/index.js" defer></script>
+</body>
+
+</html>

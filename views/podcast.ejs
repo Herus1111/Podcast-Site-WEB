@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <title>Detailseite zu einem Podcast</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/grid.css">
+</head>
+
+<body class="podcast">
+
+    <%- include("partials/header.ejs") %>
+
+    <main>
+        <div id="podcastMainContainer">
+            <figure id="bild">
+                <img src="<%= podcast.bildUrl %>" alt="logo" width="220" height="220">
+                <figcaption>Logo des Podcasts „<%= podcast.titel %>“</figcaption>
+            </figure>
+
+            <section id="info">
+                <h2>Info</h2>
+                <p>
+                    <%= podcast.beschreibung %>
+                </p>
+
+                <p><strong>Autor:</strong> <%= podcast.autor %></p>
+                <p><strong>Besitzer:</strong> <a href="mailto:<%= podcast.besitzerEmail %>"><%= podcast.besitzerName %></a></p>
+                <p><strong>Kategorien:</strong> 
+                    <% for(const k of podcast.kategorien){ %>
+                        <%= k %>
+                    <% } %>
+                </p>
+                <!-- Как перевести дату в формат Juni? Даты на одном подкасте не работают! -->
+                <p><strong>Letztes Update:</strong>
+                    <% if(podcast.letztesUpdate){ %>
+                        <time datetime="<%= podcast.letztesUpdate.slice(0,10) %>"> <%= podcast.letztesUpdate %></time>
+                    <% } %>
+                </p>
+            </section>
+
+            <section id="episoden">
+                <h2>Episoden</h2>
+                <table id="episodenTable">
+                    <thead class="tableHead">
+                        <tr>
+                            <th>Titel</th>
+                            <th>Datum</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(let i = 0; i < podcast.episoden.length; i++){ %>
+                            <tr>
+                                <!-- Как перевести дату в формат Juni? -->
+                                <td><a href="episode?pc=<%= pc %>&ep=<%= i %>"><%= podcast.episoden[i].titel %></a></td>
+                                <td><time datetime="<%= podcast.episoden[i].datum.slice(0,10) %>"> <%= new Date(podcast.episoden[i].datum).toLocaleDateString('de-DE', { day: 'numeric', month: 'long', year: 'numeric' }) %></time></td>
+                            </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </main>
+
+    <%- include("partials/aside.ejs") %>
+
+    <%- include("partials/footer.ejs") %>
+</body>
+
+</html>

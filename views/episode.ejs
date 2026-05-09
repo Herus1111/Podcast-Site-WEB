@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <title>Detailseite zu einer Episode</title>
+    <link rel = "stylesheet" type="text/css" href="css/style.css">
+    <link rel = "stylesheet" type="text/css" href="css/flex.css">
+</head>
+
+<body>
+    <%- include("partials/header.ejs") %>
+    <div id ="maincontainer">
+    <main id = "episode">    
+        <section id="Informationen_zur_Episode">
+            <h2>Informationen zur Episode</h2>
+            <p><%= episode.beschreibung %></p>
+            <p><time datetime="<%= new Date(episode.datum).toISOString().slice(0,10) %>"> <%= new Date(episode.datum).toLocaleDateString('de-DE', { day: 'numeric', month: 'long', year: 'numeric' }) %></time></p>
+        </section>
+
+        <section id="abspielen">
+            <h2>Abspielen</h2>
+            <audio src="<%= episode.audio.url %>" controls>Your browser does not support the audio element</audio>
+        </section>
+    </main>
+
+    <%- include("partials/aside.ejs") %>
+    </div>
+
+    <%- include("partials/footer.ejs") %>
+</body>
+
+</html>

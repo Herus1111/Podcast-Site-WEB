@@ -1,0 +1,53 @@
+#maincontainer {
+    display: flex;
+    flex-direction: row;
+}
+
+main#index {
+    display: flex;
+    flex-basis: 70%;
+    /* А может это и надо */
+    /* height: 100vh; */
+    flex-direction: column;
+}
+
+main#episode {
+    display: flex;
+    flex-basis: 70%;
+    /* height: 100vh; */
+    flex-direction: column;
+}
+
+#podcastForm {
+    flex: 0 0 25%;
+}
+
+#liste {
+    flex: 0 0 75%;
+}
+
+aside {
+    flex: 1;
+}
+
+#Informationen_zur_Episode {
+    flex: 0 0 50%;
+}
+
+#abspielen {
+    flex: 0 0 50%;
+}
+
+@media screen and (max-width:768px) {
+    #maincontainer {
+        flex-direction: column;
+    }
+
+    main#index {
+        flex-basis: 100%;
+    }
+
+    main#episode {
+        flex-basis: 100%;
+    }
+}

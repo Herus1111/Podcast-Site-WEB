@@ -1,0 +1,59 @@
+#abboForm form label,
+#abboForm form legend {
+    font-weight: bold;
+}
+
+#abboForm input:invalid{
+    border-bottom: 2px red solid;
+}
+
+#abboForm input:focus {
+    background-color: rgba(117, 6, 221, 0.2);
+}
+
+#abboForm label.required::after {
+    content: "*";
+    color: red
+} 
+
+#abboForm input[type="url"]{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+#abboForm input[type="submit"]{
+    background-color: rgba(196, 176, 32, 0.7);
+    border-radius: 15px;
+    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.5);
+}
+
+#abboForm input[type="submit"]:hover{
+    background-color: rgba(14, 96, 7, 0.8);
+    color: white;
+}
+
+#abboForm label {
+    display: block;
+    margin: 15px 0px;
+}
+
+#abboForm .inline label {
+    display: inline-block;
+}
+
+#abboForm fieldset {
+    margin: 0px 10px 10px 10px;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+#abboForm legend {
+    /* можно ли грув 
+    текст ариа нету*/
+    padding: 5px;
+    border-left: groove;
+    border-right: groove;
+    border-radius: 7px;
+}

@@ -1,0 +1,20 @@
+{
+  "name": "distik_project",
+  "version": "1.0.0",
+  "description": "Projekt von Dima und Rostik",
+  "license": "ISC",
+  "author": "Dima, Rostik",
+  "type": "commonjs",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.2.1",
+    "podcast-feed-parser": "^1.0.4"
+  }
+}
